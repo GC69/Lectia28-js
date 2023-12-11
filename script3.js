@@ -1,6 +1,6 @@
 // functie ce verifica disponibilitatea stocului
-function checkStock() {
-  return this.inStock > 0 ? "In stock" : "Out of stock";
+function checkStock(product) {
+  return product.inStock > 0 ? "In stock" : "Out of stock";
 }
 
 // Array de produse
@@ -59,7 +59,7 @@ const products = [
 
 // Actualizarea metodei "checkStock" pentru a returna rezultatul
 products.forEach(function (product) {
-  product.availability = checkStock.call(product);
+  product.availability = checkStock(product);
 });
 
 // Afisam lista de produse.
